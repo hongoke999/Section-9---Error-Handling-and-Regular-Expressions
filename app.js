@@ -1,32 +1,33 @@
-const user = {email: 'jdoe@gmail.com'};
+let re;
+re = /hello/i; //   i = case insensitive
+// re = /hello/g;  //  Global Search
 
-try {
-    //  Produce a ReferenceError
-    // myFunction();
+// console.log(re);
+// console.log(re.source);
 
-    //  Produce a TypeError
-    // null.myFunction();
+// exec() - return result in an array or null
+// const result = re.exec('hello world');
 
-    //  Will produce SyntaxError
-    // eval('Hello World');
+// console.log(result);
+// console.log(result[0]);
+// console.log(result.index);
+// console.log(result.input);
 
-    //  Will produce a URIError
-    // decodeURIComponent('%');
+//  test() - Returns true or false
+// const result = re.test('Hello');
+// console.log(result);
 
-    if(!user.name) {
-        // throw 'User has no name';
-        throw new SyntaxError('User has no name');
-    }
+// match() - Return result array or null
+// const str = 'Hello There';
+// const result = str.match(re);
+// console.log(result);
 
-} catch(e) {
-    console.log(`User Error: ${e.message}`);
-    // console.log(`${e.name}: ITS NULL STUPID!!!!`);
-    // console.log(e);
-    // console.log(e.message);
-    // console.log(e.name);
-    // console.log(e instanceof TypeError);
-} finally {
-    console.log('Finally runs regardless of result');
-}
+//  search() - Returns index of the first match if not found returns - 1 
+// const str = 'Hello There';
+// const result = str.search(re);
+// console.log(result);
 
-console.log('Program continues...');
+// replace() - Return new strig with some or all matches of a patten
+const str = 'Hello There';
+const newStr = str.replace(re, 'Hi');
+console.log(newStr);
